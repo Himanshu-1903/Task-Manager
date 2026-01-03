@@ -1,4 +1,8 @@
+import { useState } from 'react';
+
 function App() {
+  const [count, setCount] = useState(0);
+
   const header = (
     <header>
       <h1>Welcome to My App</h1>
@@ -7,9 +11,20 @@ function App() {
     </header>
   );
 
+  const counter = (
+    <div>
+      <h2>Basic Counter Example</h2>
+      <p>Current count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <button onClick={() => setCount(count - 1)}>Decrement</button>
+      <button onClick={() => setCount(0)}>Reset</button>
+    </div>
+  );
+
   return (
     <div>
       {header}
+      {counter}
     </div>
   );
 }
